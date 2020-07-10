@@ -127,6 +127,7 @@ ascii.describe <- function (x, condense = TRUE, ...) {
 ##' @method ascii summary.formula.response
 ##' @rdname ascii
 ascii.summary.formula.response <- function(x, vnames = c('labels', 'names'), prUnits = TRUE, lgroup = list(dimnames(stats)[[1]], if (ul) vlabels else at$vname[at$vname != ""]), n.lgroup = list(1, at$nlevels), include.rownames = FALSE, include.colnames = TRUE, format = "nice", caption = paste(at$ylabel, if(ns > 1) paste(' by', if(ul) at$strat.label else at$strat.name), ' N = ', at$n, if(at$nmiss) paste(', ', at$nmiss, ' Missing', sep=''), sep = ''), caption.level = "s", header = TRUE, ...) {
+  stopifnot(requireNamespace("Hmisc",quietly=TRUE))
   stats <- x
   oldClass(stats) <- NULL
   vnames <- match.arg(vnames)
@@ -137,7 +138,7 @@ ascii.summary.formula.response <- function(x, vnames = c('labels', 'names'), prU
 
   vlabels <- at$labels
   if(prUnits) {
-    atu <- translate(at$units, '*',' ') ## 31jan03
+    atu <- Hmisc::translate(at$units, '*',' ') ## 31jan03
     vlabels <- ifelse(atu == '',vlabels,   ## 28jan03
                       paste(vlabels,' [',atu,']',sep=''))
   }
@@ -183,6 +184,7 @@ ascii.summary.formula.response <- function(x, vnames = c('labels', 'names'), prU
 ##' @method ascii summary.formula.reverse
 ##' @rdname ascii
 ascii.summary.formula.reverse <- function(x, digits, prn = any(n != N), pctdig = 0, npct = c('numerator', 'both', 'denominator', 'none'), exclude1 = TRUE, vnames = c("labels","names"), prUnits = TRUE, sep = "/", formatArgs = NULL, round = NULL, prtest = c('P','stat','df','name'), prmsd = FALSE, pdig = 3, eps = 0.001, caption = paste("Descriptive Statistics", if(length(x$group.label)) paste(" by", x$group.label) else paste(" (N = ", x$N, ")", sep=""), sep = ""), caption.level = "s", include.rownames = FALSE, include.colnames = TRUE, colnames = gl, header = TRUE, lgroup = lgr, n.lgroup = n.lgr, rgroup = rgr, n.rgroup = n.rgr, rstyle = "d", ...) {
+  stopifnot(requireNamespace("Hmisc",quietly=TRUE))
   long <- TRUE
   npct   <- match.arg(npct)
   vnames <- match.arg(vnames)
@@ -217,13 +219,13 @@ ascii.summary.formula.reverse <- function(x, digits, prn = any(n != N), pctdig =
     nam <- if(vnames=="names") nams[i] else labels[i]
 
     if(prUnits && nchar(Units[i]))
-      nam <- paste(nam,' [',translate(Units[i],'*',' '),']',sep='')
+      nam <- paste(nam,' [',Hmisc::translate(Units[i],'*',' '),']',sep='')
 
     tr <- if(length(test) && all(prtest!='none')) test[[nams[i]]] else NULL
 
     rg <- NULL
     if(type[i] == 1 || type[i] == 3) {
-      cs <- formatCats(stats[[i]], nam, tr, type[i],
+      cs <- Hmisc::formatCats(stats[[i]], nam, tr, type[i],
                        if(length(x$group.freq)) x$group.freq else x$n[i],
                        npct, pctdig, exclude1, long, prtest,
                        pdig=pdig, eps=eps)
@@ -235,11 +237,11 @@ ascii.summary.formula.reverse <- function(x, digits, prn = any(n != N), pctdig =
         cs <- cs[-1, , drop = FALSE]
       nn <- c(nn, rep(NA, nrow(cs)-1))
 
-      lg1 <- ascii:::trim(rownames(cs))
+      lg1 <- trim(rownames(cs))
       n.lg1 <- 1
       n.lg2 <- n.rg <- nrow(cs)
     } else {
-      cs <- formatCons(stats[[i]], nam, tr, x$group.freq, prmsd,
+      cs <- Hmisc::formatCons(stats[[i]], nam, tr, x$group.freq, prmsd,
                        sep, formatArgs, round, prtest,
                        pdig=pdig, eps=eps)
       if (!is.null(tr)) {
