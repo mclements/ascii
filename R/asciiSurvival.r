@@ -84,7 +84,7 @@ ascii.survfit <- function (x, scale = 1, print.rmean = getOption("survfit.print.
         if (length(rmean) == 0)
             stop("Invalid value for rmean option")
     }
-    temp <- survival:::survmean(x, scale = scale, rmean)
+    temp <- survmean(x, scale = scale, rmean)
     mat <- ascii(temp$matrix, include.rownames = include.rownames, include.colnames = include.colnames, header = header, ...)
 
     restrm <- NULL

@@ -162,7 +162,7 @@ makeRweaveAsciiCodeRunner <- function(evalFunc = RweaveEvalWithOpt)
                 chunkout <- file(paste(chunkprefix, object$extension, sep = "."), "w")
                 if (!is.null(options$label))
                     object$chunkout[[chunkprefix]] <- chunkout
-                if(!grepl(utils:::.SweaveValidFilenameRegexp, chunkout))
+                if(!grepl(.SweaveValidFilenameRegexp, chunkout))
                     warning("file name ", sQuote(chunkout), " is not portable",
                             call. = FALSE, domain = NA)
             }
@@ -244,7 +244,7 @@ makeRweaveAsciiCodeRunner <- function(evalFunc = RweaveEvalWithOpt)
         srcrefs <- attr(chunkexps, "srcref")
 
         if (length(devs)) {
-            if(!grepl(utils:::.SweaveValidFilenameRegexp, chunkprefix))
+            if(!grepl(.SweaveValidFilenameRegexp, chunkprefix))
                 warning("file name ", sQuote(chunkprefix), " is not portable",
                         call. = FALSE, domain = NA)
             if (options$figs.only)
@@ -489,7 +489,7 @@ RweaveAsciiWritedoc <- function(object, chunk)
     {
         opts <- sub(paste(".*", object$syntax$docopt, ".*", sep = ""),
                     "\\1", chunk[pos[1L]])
-        object$options <- utils:::SweaveParseOptions(opts, object$options,
+        object$options <- SweaveParseOptions(opts, object$options,
                                              RweaveAsciiOptions)
 
         ## if (isTRUE(object$options$concordance)
@@ -633,10 +633,10 @@ RweaveAsciiOptions <- function(options)
 ##' @export
 RtangleAscii <-  function()
 {
-    list(setup = utils:::RtangleSetup,
-         runcode = utils:::RtangleRuncode,
+    list(setup = utils::RtangleSetup,
+         runcode = RtangleRuncode,
          writedoc = RtangleAsciiWritedoc,
-         finish = utils:::RtangleFinish,
+         finish = RtangleFinish,
          checkopts = RweaveAsciiOptions)
 }
 
@@ -649,7 +649,7 @@ RtangleAsciiWritedoc <- function(object, chunk)
     while(length(pos <- grep(object$syntax$docopt, chunk))) {
         opts <- sub(paste(".*", object$syntax$docopt, ".*", sep = ""),
                     "\\1", chunk[pos[1L]])
-        object$options <- utils:::SweaveParseOptions(opts, object$options,
+        object$options <- SweaveParseOptions(opts, object$options,
                                              RweaveAsciiOptions)
         chunk[pos[1L]] <- sub(object$syntax$docopt, "", chunk[pos[1L]])
     }
