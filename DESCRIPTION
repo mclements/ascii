@@ -66,3 +66,6 @@ Collate:
     'weaverAscii.r'
     'zzz.r'
     'print.r'
+    'cache_expr.R'
+    'weaver.R'
+    'unexported.R'
