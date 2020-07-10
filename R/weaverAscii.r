@@ -42,7 +42,6 @@ weaverAsciiSetup <-
 ##' @export
 weaverAsciidoc <- function()
 {
-    require(weaver)
     list(setup = weaverAsciiSetup,
          runcode = weaverAsciiRuncode,
          writedoc = RweaveAsciiWritedoc,
@@ -64,7 +63,6 @@ formals(weaverT2tSetup) <- c(formals(RweaveT2tSetup)[1:(length(formals(RweaveT2t
 ##' @export
 weaverT2t <- function()
 {
-    require(weaver)
     list(setup = weaverT2tSetup,
          runcode = weaverAsciiRuncode,
          writedoc = RweaveAsciiWritedoc,
@@ -87,7 +85,6 @@ formals(weaverOrgSetup) <- c(formals(RweaveOrgSetup)[1:(length(formals(RweaveOrg
 ##' @export
 weaverOrg <- function()
 {
-    require(weaver)
     list(setup = weaverOrgSetup,
          runcode = weaverAsciiRuncode,
          writedoc = RweaveAsciiWritedoc,
@@ -109,7 +106,6 @@ formals(weaverPandocSetup) <- c(formals(RweavePandocSetup)[1:(length(formals(Rwe
 ##' @export
 weaverPandoc <- function()
 {
-    require(weaver)
     list(setup = weaverPandocSetup,
          runcode = weaverAsciiRuncode,
          writedoc = RweaveAsciiWritedoc,
@@ -131,7 +127,6 @@ formals(weaverTextileSetup) <- c(formals(RweaveTextileSetup)[1:(length(formals(R
 ##' @export
 weaverTextile <- function()
 {
-    require(weaver)
     list(setup = weaverTextileSetup,
          runcode = weaverAsciiRuncode,
          writedoc = RweaveAsciiWritedoc,
@@ -153,7 +148,6 @@ formals(weaverReSTSetup) <- c(formals(RweaveReSTSetup)[1:(length(formals(RweaveR
 ##' @export
 weaverReST <- function()
 {
-    require(weaver)
     list(setup = weaverReSTSetup,
          runcode = weaverAsciiRuncode,
          writedoc = RweaveAsciiWritedoc,
