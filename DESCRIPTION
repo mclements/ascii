@@ -3,12 +3,15 @@ Maintainer: Mark Clements <mark.clements@ki.se>
 License: GPL (>= 2)
 Title: Export R Objects to Several Markup Languages
 Type: Package
-Author: David Hajage, Mark Clements, Seth Falcon
+Authors@R: c(person("David", "Hajage", role=c("aut", "cre"), email="dhajage@gmail.com"),
+	person("Mark", "Clements", role="ctb", email="mark.clements@ki.se"),
+	person("Seth", "Falcon", role="cph", email="seth@userprimary.net"))
 Description: Coerce R object to asciidoc, txt2tags,
     restructuredText, org, textile or pandoc syntax.
     Package comes with a set of drivers for Sweave.
 Version: 2.3
-URL: http://github.com/mclements/ascii/
+URL: http://github.com/mclements/ascii
+BugReports: http://github.com/mclements/ascii/issues
 Date: 2020-07-10
 Depends:
     R (>= 2.13),
