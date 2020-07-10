@@ -11,40 +11,46 @@
 ##' @export
 ##' @import utils
 ##' @keywords IO file
-Asciidoc <- Sweave
-formals(Asciidoc) <-  alist(file=, driver=RweaveAsciidoc, syntax=SweaveSyntaxNoweb, encoding="", ...=)
+Asciidoc <- function(file, driver=RweaveAsciidoc, syntax=SweaveSyntaxNoweb,
+                     encoding=getOption("SweaveSyntax"), ...)
+    Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
 ##' @export
 ##' @import utils
 ##' @keywords IO file
-T2t <- Sweave
-formals(T2t) <-  alist(file=, driver=RweaveT2t, syntax=SweaveSyntaxNoweb, encoding="", ...=)
+T2t <- function(file, driver=RweaveT2t, syntax=SweaveSyntaxNoweb,
+                encoding=getOption("SweaveSyntax"), ...)
+    Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
 ##' @export
 ##' @import utils
 ##' @keywords IO file
-ReST <- Sweave
-formals(ReST) <-  alist(file=, driver=RweaveReST, syntax=SweaveSyntaxNoweb, encoding="", ...=)
+ReST <- function(file, driver=RweaveReST, syntax=SweaveSyntaxNoweb,
+                 encoding=getOption("SweaveSyntax"), ...)
+    Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
 ##' @export
 ##' @import utils
 ##' @keywords IO file
-Org <- Sweave
-formals(Org) <-  alist(file=, driver=RweaveOrg, syntax=SweaveSyntaxNoweb, encoding="", ...=)
+Org <- function(file, driver=RweaveOrg, syntax=SweaveSyntaxNoweb,
+                encoding=getOption("SweaveSyntax"), ...)
+    Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
 ##' @export
 ##' @import utils
 ##' @keywords IO file
-Textile <- Sweave
-formals(Textile) <-  alist(file=, driver=RweaveTextile, syntax=SweaveSyntaxNoweb, encoding="", ...=)
+Textile <- function(file, driver=RweaveTextile, syntax=SweaveSyntaxNoweb,
+                    encoding=getOption("SweaveSyntax"), ...)
+    Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
 ##' @export
 ##' @import utils
 ##' @keywords IO file
-Pandoc <- Sweave
-formals(Pandoc) <-  alist(file=, driver=RweavePandoc, syntax=SweaveSyntaxNoweb, encoding="", ...=)
+Pandoc <- function(file, driver=RweavePandoc, syntax=SweaveSyntaxNoweb,
+                   encoding=getOption("SweaveSyntax"), ...)
+    Sweave(file, driver, syntax, encoding, ...)
