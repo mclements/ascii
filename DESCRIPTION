@@ -12,15 +12,17 @@ URL: http://github.com/mclements/ascii/
 Date: 2020-07-10
 Depends:
     R (>= 2.13),
-    utils,
     methods
-Suggests:
+Imports:
+    utils,
+    digest,
+    codetools,
     survival,
+    stats
+Suggests:
     Hmisc,
     xtable,
     R2HTML,
-    cacheSweave,
-    weaver,
     knitr
 Collate:
     'asciiAnova.r'
@@ -44,7 +46,6 @@ Collate:
     'asciiTs.r'
     'asciiVector.r'
     'bind.r'
-    'cacheSweaveAscii.r'
     'cbind.r'
     'export.r'
     'generic.r'
