@@ -2,7 +2,11 @@
 \alias{RweaveAsciiSetup}
 \title{RweaveAsciiSetup}
 \usage{
-RweaveAsciiSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "txt", backend = "asciidoc", openSchunk = "----", closeSchunk = "\n----\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "include::", closeInclude = ".txt[]", openFig = "image::", closeFig = "[]", ...)
+RweaveAsciiSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE,
+extension = "txt", backend = "asciidoc", openSchunk = "----",
+closeSchunk = "\n----\n", openSinput = "", closeSinput = "",
+openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "include::",
+closeInclude = ".txt[]", openFig = "image::", closeFig = "[]", ...)
 }
 \arguments{
   \item{file}{file}

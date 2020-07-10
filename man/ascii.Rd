@@ -48,19 +48,56 @@
 \alias{"package-ascii"}
 \title{Export R objects to several markup languages}
 \usage{
-\method{ascii}{default}(x, include.rownames = TRUE, include.colnames = TRUE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "", caption = NULL, caption.level = NULL, width = 0, frame = NULL, grid = NULL, valign = NULL, header = TRUE, footer = FALSE, align = NULL, col.width = 1, style = NULL, tgroup = NULL, n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h", bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle", bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c", lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL, ralign = "c", rvalign = "middle", rstyle = "h", list.type = "bullet", ...)
+\method{ascii}{default}(x, include.rownames = TRUE,
+include.colnames = TRUE, rownames = NULL, colnames = NULL,
+format = "f", digits = 2, decimal.mark = ".", na.print = "",
+caption = NULL, caption.level = NULL, width = 0, frame = NULL,
+grid = NULL, valign = NULL, header = TRUE, footer = FALSE,
+align = NULL, col.width = 1, style = NULL, tgroup = NULL,
+n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h",
+bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle",
+bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c",
+lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL,
+ralign = "c", rvalign = "middle", rstyle = "h", list.type = "bullet", ...)
 
 \method{ascii}{describe}(x, condense = TRUE, ...)
 
-\method{ascii}{summary.formula.response}(x, vnames = c("labels", "names"), prUnits = TRUE, lgroup = list(dimnames(stats)[[1]], if (ul) vlabels else at$vname[at$vname != ""]), n.lgroup = list(1, at$nlevels), include.rownames = FALSE, include.colnames = TRUE, format = "nice", caption = paste(at$ylabel, if (ns > 1) paste(" by", if (ul) at$strat.label else at$strat.name), " N = ", at$n, if (at$nmiss) paste(", ", at$nmiss, " Missing", sep = ""), sep = ""), caption.level = "s", header = TRUE, ...)
+\method{ascii}{summary.formula.response}(x, vnames = c("labels", "names"),
+prUnits = TRUE,
+lgroup = list(dimnames(stats)[[1]],
+              if (ul) vlabels else at$vname[at$vname != ""]),
+n.lgroup = list(1, at$nlevels), include.rownames = FALSE,
+include.colnames = TRUE, format = "nice",
+caption = paste(at$ylabel,
+if (ns > 1) paste(" by", if (ul) at$strat.label else at$strat.name),
+" N = ", at$n,
+if (at$nmiss) paste(", ", at$nmiss, " Missing", sep = ""), sep = ""),
+caption.level = "s", header = TRUE, ...)
 
-\method{ascii}{summary.formula.reverse}(x, digits, prn = any(n != N), pctdig = 0, npct = c("numerator", "both", "denominator", "none"), exclude1 = TRUE, vnames = c("labels", "names"), prUnits = TRUE, sep = "/", formatArgs = NULL, round = NULL, prtest = c("P", "stat", "df", "name"), prmsd = FALSE, pdig = 3, eps = 0.001, caption = paste("Descriptive Statistics", if (length(x$group.label)) paste(" by", x$group.label) else paste(" (N = ", x$N, ")", sep = ""), sep = ""), caption.level = "s", include.rownames = FALSE, include.colnames = TRUE, colnames = gl, header = TRUE, lgroup = lgr, n.lgroup = n.lgr, rgroup = rgr, n.rgroup = n.rgr, rstyle = "d", ...)
+\method{ascii}{summary.formula.reverse}(x, digits, prn = any(n != N),
+pctdig = 0, npct = c("numerator", "both", "denominator", "none"),
+exclude1 = TRUE, vnames = c("labels", "names"), prUnits = TRUE, sep = "/",
+formatArgs = NULL, round = NULL, prtest = c("P", "stat", "df", "name"),
+prmsd = FALSE, pdig = 3, eps = 0.001,
+caption = paste("Descriptive Statistics",
+if (length(x$group.label)) paste(" by", x$group.label) else
+paste(" (N = ", x$N, ")", sep = ""), sep = ""),
+caption.level = "s", include.rownames = FALSE,
+include.colnames = TRUE, colnames = gl, header = TRUE, lgroup = lgr,
+n.lgroup = n.lgr, rgroup = rgr, n.rgroup = n.rgr, rstyle = "d", ...)
 
-\method{ascii}{summary.formula.cross}(x, twoway = nvar == 2, prnmiss = any(stats$Missing > 0), prn = TRUE, formatArgs = NULL, caption = a$heading, caption.level = "s", include.rownames = FALSE, include.colnames = TRUE, header = TRUE, format = "nice", lgroup = v, n.lgroup = rep(length(z), length(v)), ...)
+\method{ascii}{summary.formula.cross}(x, twoway = nvar == 2,
+prnmiss = any(stats$Missing > 0), prn = TRUE, formatArgs = NULL,
+caption = a$heading, caption.level = "s", include.rownames = FALSE,
+include.colnames = TRUE, header = TRUE, format = "nice", lgroup = v,
+n.lgroup = rep(length(z), length(v)), ...)
 
 \method{ascii}{sessionInfo}(x, locale = TRUE, ...)
 
-\method{ascii}{survfit}(x, scale = 1, print.rmean = getOption("survfit.print.rmean"), rmean = getOption("survfit.rmean"), include.rownames = TRUE, include.colnames = TRUE, header = TRUE, ...)
+\method{ascii}{survfit}(x, scale = 1,
+print.rmean = getOption("survfit.print.rmean"),
+rmean = getOption("survfit.rmean"), include.rownames = TRUE,
+include.colnames = TRUE, header = TRUE, ...)
 
 ascii(x, ...)
 }

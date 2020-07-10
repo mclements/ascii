@@ -2,7 +2,9 @@
 \alias{asciiOpts}
 \title{asciiOptions}
 \usage{
-asciiOpts(select = "all", .backends = NULL, .outputs = NULL, .extensions = NULL, .cli = NULL, .args = NULL, .O = NULL, .f = NULL, .e = NULL, .preambule = NULL)
+asciiOpts(select = "all", .backends = NULL, .outputs = NULL,
+.extensions = NULL, .cli = NULL, .args = NULL, .O = NULL, .f = NULL,
+.e = NULL, .preambule = NULL)
 }
 \arguments{
   \item{select}{select}

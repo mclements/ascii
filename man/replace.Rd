@@ -2,7 +2,8 @@
 \alias{replace}
 \title{replace}
 \usage{
-replace(backend = getOption("asciiBackend"), cygwin = FALSE, i, f = NULL, d = NULL, e = NULL, O = NULL)
+replace(backend = getOption("asciiBackend"), cygwin = FALSE, i,
+f = NULL, d = NULL, e = NULL, O = NULL)
 }
 \arguments{
   \item{backend}{backend}

@@ -1,6 +1,4 @@
-\name{cacheSweaveReST}
-\alias{cacheSweaveReST}
-\alias{cacheSweaveReSTSetup}
+\name{weaverReST}
 \alias{RtangleReST}
 \alias{RweaveReST}
 \alias{RweaveReSTFinish}
@@ -10,13 +8,21 @@
 \alias{RweaveReSTWritedoc}
 \alias{weaverReST}
 \alias{weaverReSTSetup}
-\title{A driver to parse rest noweb files with Sweave tool - cacheSweave based}
+\title{A driver to parse rest noweb files with Sweave tool}
 \usage{
-cacheSweaveReSTSetup(..., cache = FALSE, trace = FALSE, dependson = NULL)
+RweaveReSTSetup(file, syntax, output = NULL, quiet = FALSE,
+debug = FALSE, extension = "rst", backend = "docutils, sphinx, ...",
+openSchunk = ".. code-block:: r\n", closeSchunk = "\n\n",
+openSinput = "", closeSinput = "", openSoutput = "\n",
+closeSoutput = "", indent = "  ", openInclude = ".. include::",
+closeInclude = ".rst", openFig = ".. image:: ", closeFig = "", ...)
 
-RweaveReSTSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "rst", backend = "docutils, sphinx, ...", openSchunk = ".. code-block:: r\n", closeSchunk = "\n\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "  ", openInclude = ".. include::", closeInclude = ".rst", openFig = ".. image:: ", closeFig = "", ...)
-
-weaverReSTSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "rst", backend = "docutils, sphinx, ...", openSchunk = ".. code-block:: r\n", closeSchunk = "\n\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "  ", openInclude = ".. include::", closeInclude = ".rst", openFig = ".. image:: ", closeFig = "", use.cache = TRUE, ...)
+weaverReSTSetup(file, syntax, output = NULL, quiet = FALSE,
+debug = FALSE, extension = "rst", backend = "docutils, sphinx, ...",
+openSchunk = ".. code-block:: r\n", closeSchunk = "\n\n",
+openSinput = "", closeSinput = "", openSoutput = "\n",
+closeSoutput = "", indent = "  ", openInclude = ".. include::",
+closeInclude = ".rst", openFig = ".. image:: ", closeFig = "", use.cache = TRUE, ...)
 }
 \arguments{
   \item{trace}{trace}
@@ -44,9 +50,9 @@ None value is returned. From a .Rnw noweb file, the corresponding
 .rst is produced (as eventuals files for graphs).
 }
 \description{
-A driver to parse rest noweb files with Sweave tool - cacheSweave based
+A driver to parse rest noweb files with Sweave tool
 
-A driver to parse rest noweb files with Sweave tool - cacheSweave based
+A driver to parse rest noweb files with Sweave tool
 
 A driver to parse sphinx noweb files with Sweave tool
 This driver parses sphinx files containing R code and replace pieces of
@@ -66,15 +72,13 @@ Compare with RweaveLatex driver, RweaveReST provides one new option :
 \code{format} to choose the format of figure that will be inserted in the
 final document.
 
-In addition, \code{cache} option from \code{cacheSweave} or \code{weaver}
-package is also available with \code{cacheSweaveReST} driver and
-\code{weaverReST} driver.
+In addition, \code{cache} option from \code{weaver}
+package is also available with \code{weaverReST} driver.
 
 A wrapper for \code{Sweave} can be used, named \code{ReST}.
 }
 \examples{
 \dontrun{
-library(ascii)
 ReST("file.Rnw")
 }
 }

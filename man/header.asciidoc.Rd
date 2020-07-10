@@ -2,7 +2,8 @@
 \alias{header.asciidoc}
 \title{header.asciidoc}
 \usage{
-header.asciidoc(caption = NULL, caption.level = NULL, frame = NULL, grid = NULL, col.width = 1, width = 0)
+header.asciidoc(caption = NULL, caption.level = NULL, frame = NULL,
+grid = NULL, col.width = 1, width = 0)
 }
 \arguments{
   \item{caption}{caption}

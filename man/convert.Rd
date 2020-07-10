@@ -2,7 +2,8 @@
 \alias{convert}
 \title{Convert a file with specified backend}
 \usage{
-convert(i, d = NULL, f = NULL, e = NULL, O = NULL, backend = getOption("asciiBackend"), cygwin = FALSE, open = FALSE)
+convert(i, d = NULL, f = NULL, e = NULL, O = NULL,
+backend = getOption("asciiBackend"), cygwin = FALSE, open = FALSE)
 }
 \arguments{
   \item{i}{input file}

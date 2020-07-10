@@ -3,7 +3,10 @@
 \alias{Report}
 \title{Report creation}
 \usage{
-createreport(..., list = NULL, file = NULL, format = NULL, open = TRUE, backend = getOption("asciiBackend"), encoding = NULL, options = NULL, cygwin = FALSE, title = NULL, author = NULL, email = NULL, date = NULL)
+createreport(..., list = NULL, file = NULL, format = NULL,
+open = TRUE, backend = getOption("asciiBackend"), encoding = NULL,
+options = NULL, cygwin = FALSE, title = NULL, author = NULL,
+email = NULL, date = NULL)
 }
 \arguments{
   \item{...}{R objects (not used if \code{"list"} is not

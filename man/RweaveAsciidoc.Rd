@@ -1,5 +1,4 @@
-\name{cacheSweaveAsciidoc}
-\alias{cacheSweaveAsciidoc}
+\name{weaverAsciidoc}
 \alias{RtangleAsciidoc}
 \alias{RweaveAsciidoc}
 \alias{RweaveAsciidocFinish}
@@ -9,9 +8,13 @@
 \alias{RweaveAsciidocWritedoc}
 \alias{weaverAsciidoc}
 \alias{weaverAsciiSetup}
-\title{A driver to parse asciidoc noweb files with Sweave tool - cacheSweave based}
+\title{A driver to parse asciidoc noweb files with Sweave tool}
 \usage{
-weaverAsciiSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "txt", backend = "asciidoc", openSchunk = "----", closeSchunk = "\n----\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "include::", closeInclude = ".txt[]", openFig = "image::", closeFig = "[]", use.cache = TRUE, ...)
+weaverAsciiSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE,
+extension = "txt", backend = "asciidoc", openSchunk = "----",
+closeSchunk = "\n----\n", openSinput = "", closeSinput = "",
+openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "include::",
+closeInclude = ".txt[]", openFig = "image::", closeFig = "[]", use.cache = TRUE, ...)
 }
 \arguments{
   \item{use.cache}{use.cache}
@@ -21,7 +24,7 @@ None value is returned. From a .Rnw noweb file, the corresponding
 .txt is produced (as eventuals files for graphs).
 }
 \description{
-A driver to parse asciidoc noweb files with Sweave tool - cacheSweave based
+A driver to parse asciidoc noweb files with Sweave tool
 
 A driver to parse asciidoc noweb files with Sweave tool
 This driver parses asciidoc files containing R code and replace pieces of
@@ -39,15 +42,13 @@ Compare with RweaveLatex driver, RweaveAsciidoc provides one new option :
 \code{format} to choose the format of figure that will be inserted in the
 final document.
 
-In addition, \code{cache} option from \code{cacheSweave} or \code{weaver}
-package is also available with \code{cacheSweaveAsciidoc} driver and
-\code{weaverAsciidoc} driver.
+In addition, \code{cache} option from \code{weaver}
+package is also available with \code{weaverAsciidoc} driver.
 
 A wrapper for \code{Sweave} can be used, named \code{Asciidoc}.
 }
 \examples{
 \dontrun{
-library(ascii)
 Asciidoc("file.Rnw")
 }
 }

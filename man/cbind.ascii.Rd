@@ -2,7 +2,8 @@
 \alias{cbind.ascii}
 \title{Cbind two ascii objects}
 \usage{
-cbind.ascii(..., caption = NULL, caption.level = NULL, frame = NULL, grid = NULL, col.width = 1, width = 0)
+\method{cbind}{ascii}(..., caption = NULL, caption.level = NULL,
+frame = NULL, grid = NULL, col.width = 1, width = 0)
 }
 \arguments{
   \item{...}{ascii objects}

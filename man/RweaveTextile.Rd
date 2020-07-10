@@ -1,6 +1,4 @@
-\name{cacheSweaveTextile}
-\alias{cacheSweaveTextile}
-\alias{cacheSweaveTextileSetup}
+\name{weaverTextile}
 \alias{RtangleTextile}
 \alias{RweaveTextile}
 \alias{RweaveTextileFinish}
@@ -10,13 +8,21 @@
 \alias{RweaveTextileWritedoc}
 \alias{weaverTextile}
 \alias{weaverTextileSetup}
-\title{A driver to parse textile noweb files with Sweave tool - cacheSweave based}
+\title{A driver to parse textile noweb files with Sweave tool}
 \usage{
-cacheSweaveTextileSetup(..., cache = FALSE, trace = FALSE, dependson = NULL)
+RweaveTextileSetup(file, syntax, output = NULL, quiet = FALSE,
+debug = FALSE, extension = "txt", backend = "textile",
+openSchunk = "\nbc.. ", closeSchunk = "\n\np. \n\n", openSinput = "",
+closeSinput = "", openSoutput = "\n", closeSoutput = "",
+indent = "", openInclude = "", closeInclude = "", openFig = "!",
+closeFig = "!", ...)
 
-RweaveTextileSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "txt", backend = "textile", openSchunk = "\nbc.. ", closeSchunk = "\n\np. \n\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "", closeInclude = "", openFig = "!", closeFig = "!", ...)
-
-weaverTextileSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "txt", backend = "textile", openSchunk = "\nbc.. ", closeSchunk = "\n\np. \n\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "", closeInclude = "", openFig = "!", closeFig = "!", use.cache = TRUE, ...)
+weaverTextileSetup(file, syntax, output = NULL, quiet = FALSE,
+debug = FALSE, extension = "txt", backend = "textile",
+openSchunk = "\nbc.. ", closeSchunk = "\n\np. \n\n",
+openSinput = "", closeSinput = "", openSoutput = "\n",
+closeSoutput = "", indent = "", openInclude = "", closeInclude = "",
+openFig = "!", closeFig = "!", use.cache = TRUE, ...)
 }
 \arguments{
   \item{trace}{trace}
@@ -44,9 +50,9 @@ None value is returned. From a .Rnw noweb file, the corresponding
 .txt is produced (as eventuals files for graphs).
 }
 \description{
-A driver to parse textile noweb files with Sweave tool - cacheSweave based
+A driver to parse textile noweb files with Sweave tool
 
-A driver to parse textile noweb files with Sweave tool - cacheSweave based
+A driver to parse textile noweb files with Sweave tool
 
 A driver to parse textile noweb files with Sweave tool
 This driver parses textile files containing R code and replace pieces of
@@ -66,15 +72,13 @@ Compare with RweaveLatex driver, RweaveTextile provides one new option :
 \code{format} to choose the format of figure that will be inserted in the
 final document.
 
-In addition, \code{cache} option from \code{cacheSweave} or \code{weaver}
-package is also available with \code{cacheSweaveTextile} driver and
-\code{weaverTextile} driver.
+In addition, \code{cache} option from \code{weaver}
+package is also available with \code{weaverTextile} driver.
 
 A wrapper for \code{Sweave} can be used, named \code{Textile}.
 }
 \examples{
 \dontrun{
-library(ascii)
 Textile("file.Rnw")
 }
 }

@@ -1,6 +1,4 @@
-\name{cacheSweavePandoc}
-\alias{cacheSweavePandoc}
-\alias{cacheSweavePandocSetup}
+\name{weaverPandoc}
 \alias{RtanglePandoc}
 \alias{RweavePandoc}
 \alias{RweavePandocFinish}
@@ -10,13 +8,21 @@
 \alias{RweavePandocWritedoc}
 \alias{weaverPandoc}
 \alias{weaverPandocSetup}
-\title{A driver to parse pandoc noweb files with Sweave tool - cacheSweave based}
+\title{A driver to parse pandoc noweb files with Sweave tool}
 \usage{
-cacheSweavePandocSetup(..., cache = FALSE, trace = FALSE, dependson = NULL)
+RweavePandocSetup(file, syntax, output = NULL, quiet = FALSE,
+debug = FALSE, extension = "md", backend = "pandoc",
+openSchunk = "~~~~~~{.R}", closeSchunk = "\n~~~~~~~~~~~\n\n",
+openSinput = "", closeSinput = "", openSoutput = "\n",
+closeSoutput = "", indent = "", openInclude = "", closeInclude = "",
+openFig = "![](", closeFig = ")", ...)
 
-RweavePandocSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "md", backend = "pandoc", openSchunk = "~~~~~~{.R}", closeSchunk = "\n~~~~~~~~~~~\n\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "", closeInclude = "", openFig = "![](", closeFig = ")", ...)
-
-weaverPandocSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "md", backend = "pandoc", openSchunk = "~~~~~~{.R}", closeSchunk = "\n~~~~~~~~~~~\n\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "", closeInclude = "", openFig = "![](", closeFig = ")", use.cache = TRUE, ...)
+weaverPandocSetup(file, syntax, output = NULL, quiet = FALSE,
+debug = FALSE, extension = "md", backend = "pandoc",
+openSchunk = "~~~~~~{.R}", closeSchunk = "\n~~~~~~~~~~~\n\n",
+openSinput = "", closeSinput = "", openSoutput = "\n",
+closeSoutput = "", indent = "", openInclude = "",
+closeInclude = "", openFig = "![](", closeFig = ")", use.cache = TRUE, ...)
 }
 \arguments{
   \item{trace}{trace}
@@ -44,9 +50,9 @@ None value is returned. From a .Rnw noweb file, the corresponding
 .md is produced (as eventuals files for graphs).
 }
 \description{
-A driver to parse pandoc noweb files with Sweave tool - cacheSweave based
+A driver to parse pandoc noweb files with Sweave tool
 
-A driver to parse pandoc noweb files with Sweave tool - cacheSweave based
+A driver to parse pandoc noweb files with Sweave tool
 
 A driver to parse Pandoc noweb files with Sweave tool
 This driver parses Pandoc files containing R code and replace pieces of code
@@ -66,15 +72,13 @@ Compare with RweaveLatex driver, RweavePandoc provides one new option :
 \code{format} to choose the format of figure that will be inserted in the
 final document.
 
-In addition, \code{cache} option from \code{cacheSweave} or \code{weaver}
-package is also available with \code{cacheSweavePandoc} driver and
-\code{weaverPandoc} driver.
+In addition, \code{cache} option from \code{weaver}
+package is also available with \code{weaverPandoc} driver.
 
 A wrapper for \code{Sweave} can be used, named \code{Pandoc}.
 }
 \examples{
 \dontrun{
-library(ascii)
 Pandoc("file.Rnw")
 }
 }

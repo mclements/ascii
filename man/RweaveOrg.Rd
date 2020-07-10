@@ -1,6 +1,4 @@
-\name{cacheSweaveOrg}
-\alias{cacheSweaveOrg}
-\alias{cacheSweaveOrgSetup}
+\name{weaverOrg}
 \alias{RtangleOrg}
 \alias{RweaveOrg}
 \alias{RweaveOrgFinish}
@@ -10,13 +8,21 @@
 \alias{RweaveOrgWritedoc}
 \alias{weaverOrg}
 \alias{weaverOrgSetup}
-\title{A driver to parse org noweb files with Sweave tool - cacheSweave based}
+\title{A driver to parse org noweb files with Sweave tool}
 \usage{
-cacheSweaveOrgSetup(..., cache = FALSE, trace = FALSE, dependson = NULL)
+RweaveOrgSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE,
+extension = "org", backend = "org-mode",
+openSchunk = "#+BEGIN_SRC R-transcript", closeSchunk = "\n#+END_SRC\n",
+openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "",
+indent = "", openInclude = "#+INCLUDE: \"", closeInclude = ".org\"",
+openFig = "[[file:", closeFig = "]]", ...)
 
-RweaveOrgSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "org", backend = "org-mode", openSchunk = "#+BEGIN_SRC R-transcript", closeSchunk = "\n#+END_SRC\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "#+INCLUDE: \"", closeInclude = ".org\"", openFig = "[[file:", closeFig = "]]", ...)
-
-weaverOrgSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE, extension = "org", backend = "org-mode", openSchunk = "#+BEGIN_SRC R-transcript", closeSchunk = "\n#+END_SRC\n", openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "", indent = "", openInclude = "#+INCLUDE: \"", closeInclude = ".org\"", openFig = "[[file:", closeFig = "]]", use.cache = TRUE, ...)
+weaverOrgSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE,
+extension = "org", backend = "org-mode",
+openSchunk = "#+BEGIN_SRC R-transcript", closeSchunk = "\n#+END_SRC\n",
+openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "",
+indent = "", openInclude = "#+INCLUDE: \"", closeInclude = ".org\"",
+openFig = "[[file:", closeFig = "]]", use.cache = TRUE, ...)
 }
 \arguments{
   \item{trace}{trace}
@@ -44,9 +50,9 @@ None value is returned. From a .Rnw noweb file, the corresponding
 .org is produced (as eventuals files for graphs).
 }
 \description{
-A driver to parse org noweb files with Sweave tool - cacheSweave based
+A driver to parse org noweb files with Sweave tool
 
-A driver to parse org noweb files with Sweave tool - cacheSweave based
+A driver to parse org noweb files with Sweave tool
 
 A driver to parse org noweb files with Sweave tool
 This driver parses org files containing R code and replace pieces of code
@@ -66,15 +72,13 @@ Compare with RweaveLatex driver, RweaveOrg provides one new option :
 \code{format} to choose the format of figure that will be inserted in the
 final document.
 
-In addition, \code{cache} option from \code{cacheSweave} or \code{weaver}
-package is also available with \code{cacheSweaveOrg} driver and
-\code{weaverOrg} driver.
+In addition, \code{cache} option from \code{weaver}
+package is also available with \code{weaverOrg} driver.
 
 A wrapper for \code{Sweave} can be used, named \code{Org}.
 }
 \examples{
 \dontrun{
-library(ascii)
 Org("file.Rnw")
 }
 }

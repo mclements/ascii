@@ -2,7 +2,9 @@
 \alias{tocharac}
 \title{tocharac}
 \usage{
-tocharac(x, include.rownames = FALSE, include.colnames = FALSE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "")
+tocharac(x, include.rownames = FALSE, include.colnames = FALSE,
+rownames = NULL, colnames = NULL, format = "f", digits = 2,
+decimal.mark = ".", na.print = "")
 }
 \arguments{
   \item{x}{x}
