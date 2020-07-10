@@ -30,3 +30,5 @@ R/SweaveSyntaxAscii.r
 R/show.latex.r
 R/.*~
 R/.Rhistory
+^ascii.*\.tar\.gz$
+Makefile

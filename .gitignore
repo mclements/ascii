@@ -14,3 +14,7 @@ temp.r
 *.text
 *.rtf
 *.t2t
+Makefile
+*.tar.gz
+..Rcheck/
+ascii.Rcheck/
