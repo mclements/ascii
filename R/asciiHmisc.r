@@ -128,7 +128,7 @@ ascii.describe <- function (x, condense = TRUE, ...) {
 ##' @rdname ascii
 ascii.summary.formula.response <- function(x, vnames = c('labels', 'names'), prUnits = TRUE, lgroup = list(dimnames(stats)[[1]], if (ul) vlabels else at$vname[at$vname != ""]), n.lgroup = list(1, at$nlevels), include.rownames = FALSE, include.colnames = TRUE, format = "nice", caption = paste(at$ylabel, if(ns > 1) paste(' by', if(ul) at$strat.label else at$strat.name), ' N = ', at$n, if(at$nmiss) paste(', ', at$nmiss, ' Missing', sep=''), sep = ''), caption.level = "s", header = TRUE, ...) {
   stats <- x
-  stats <- oldUnclass(stats)
+  oldClass(stats) <- NULL
   vnames <- match.arg(vnames)
   ul <- vnames=='labels'
 
