@@ -169,6 +169,7 @@ asciiCbind <- setRefClass("asciiCbind",
 ##' Cbind two ascii objects
 ##'
 ##' This function binds cols of two ascii table.
+##' @method bind ascii
 ##' @title Cbind two ascii objects
 ##' @param ... ascii objects
 ##' @param caption see \code{?ascii}
