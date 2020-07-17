@@ -1,0 +1,125 @@
+#+title: =ascii= package 
+
+=ascii= is an R package for writing [[http://www.methods.co.nz/asciidoc/][asciidoc]], [[http://txt2tags.sourceforge.net/][txt2tags]], [[http://docutils.sourceforge.net/rst.html][reStructuredText]], [[http://orgmode.org/][Org]] and [[http://textile.thresholdstate.com/][textile]] documents with embeded R code.
+
+Initially, we set some options, including the default for =asciiType=. 
+
+#+BEGIN_SRC R :session *R* :exports code
+options(asciiType = "org")
+options(width = 80)
+#+END_SRC
+
+#+RESULTS:
+: 90
+
+** Simple output
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+  x <- matrix(1:4, 2, 2)
+  ascii(x, TRUE, TRUE)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+|   |    1 |    2 |
+| 1 | 1.00 | 3.00 |
+| 2 | 2.00 | 4.00 |
+:END:
+
+
+The same with some options:
+
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+  ascii(x, caption = "A simple matrix", width = 50, digits = 0, align = c("c", "r"),
+        style = matrix(c("d", "s", "e", "m"), 2, 2), lgroup = "group 1",
+        tgroup = "group 2")
+#+end_src 
+
+#+RESULTS:
+:RESULTS:
+#+CAPTION: A simple matrix
+|             | /*group 2*/ |     |
+| **group 1** | =1=         | *3* |
+|             | /2/         | 4   |
+:END:
+
+** A list example
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+ y <- summary(with(esoph, table(alcgp, agegp)))
+ ascii(y, caption = "A simple list")
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+#+CAPTION: A simple list
+- Number of cases in table: 88 
+- Number of factors: 2 
+- Test for independence of all factors:
+  - Chisq = 1.4189, df = 15, p-value = 1
+  - Chi-squared approximation may be incorrect
+:END:
+
+
+** What =ascii= provides
+
+=ascii= provides:
+
+- a generic method: =ascii()=. It creates a plain text representations of many R objects.
+- several classic =Sweave= drivers: =RweaveAsciidoc()=, =RweaveT2t()=, =RweaveReST()=, =RweaveOrg()= and =RweaveTextile()=.
+- [[https://www.bioconductor.org/packages/release/bioc/html/weaver.html][weaver]] based =Sweave= drivers: =weaverAsciidoc()=, =weaverT2t()=, =weaverReST()=, =weaverOrg()= and =weaverTextile()=.
+- some simple wrappers for =Sweave()= named =Asciidoc()=, =T2t()=, =ReST()=, =Org()= and =Textile()=.
+
+** ascii methods
+
+=ascii= provides methods for:
+
+
+#+BEGIN_SRC R :session *R* :results output :exports both
+methods(ascii)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+ [1] ascii.anova*                    ascii.aov*                     
+ [3] ascii.aovlist*                  ascii.cast_df*                 
+ [5] ascii.character*                ascii.coxph*                   
+ [7] ascii.CrossTable*               ascii.data.frame*              
+ [9] ascii.default*                  ascii.density*                 
+[11] ascii.describe*                 ascii.describe.single*         
+[13] ascii.factor*                   ascii.freqtable*               
+[15] ascii.ftable*                   ascii.glm*                     
+[17] ascii.htest*                    ascii.integer*                 
+[19] ascii.list*                     ascii.lm*                      
+[21] ascii.matrix*                   ascii.meanscomp*               
+[23] ascii.mtable*                   ascii.numeric*                 
+[25] ascii.packageDescription*       ascii.prcomp*                  
+[27] ascii.sessionInfo*              ascii.simple.list*             
+[29] ascii.smooth.spline*            ascii.stat.table*              
+[31] ascii.summary.aov*              ascii.summary.aovlist*         
+[33] ascii.summary.formula.cross*    ascii.summary.formula.response*
+[35] ascii.summary.formula.reverse*  ascii.summary.glm*             
+[37] ascii.summary.lm*               ascii.summary.prcomp*          
+[39] ascii.summary.survfit*          ascii.summary.table*           
+[41] ascii.survdiff*                 ascii.survfit*                 
+[43] ascii.table*                    ascii.ts*                      
+[45] ascii.zoo*                     
+see '?methods' for accessing help and source code
+#+end_example
+
+** Session info
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+ascii(sessionInfo())
+#+end_src 
+
+#+RESULTS:
+:RESULTS:
+- R version :: R version 3.6.3 (2020-02-29), x86_64-pc-linux-gnu
+- locale :: LC_CTYPE=en_US.UTF-8, LC_NUMERIC=C, LC_TIME=en_AU.UTF-8, LC_COLLATE=en_US.UTF-8, LC_MONETARY=en_AU.UTF-8, LC_MESSAGES=en_US.UTF-8, LC_PAPER=en_AU.UTF-8, LC_NAME=C, LC_ADDRESS=C, LC_TELEPHONE=C, LC_MEASUREMENT=en_AU.UTF-8, LC_IDENTIFICATION=C
+- attached base packages :: splines, stats, graphics, grDevices, utils, datasets, methods, base
+- other attached packages :: ascii_2.3, ggpubr_0.2.5, magrittr_1.5, rstpm2_1.5.2, biostat3_0.1.4, MASS_7.3-51.6, survival_3.1-8, tidyr_0.8.3, ggplot2_3.1.1, dplyr_0.8.0.1
+- loaded via a namespace (and not attached) :: deSolve_1.27.1, tidyselect_0.2.5, reshape2_1.4.3, purrr_0.3.3, haven_2.1.1, lattice_0.20-41, carData_3.0-2, colorspace_1.4-1, stats4_3.6.3, mgcv_1.8-31, rlang_0.4.6, pillar_1.3.1, foreign_0.8-76, glue_1.3.1, withr_2.1.2, muhaz_1.2.6.1, readxl_1.3.1, plyr_1.8.4, stringr_1.4.0, munsell_0.5.0, ggsignif_0.6.0, gtable_0.3.0, cellranger_1.1.0, bdsmatrix_1.3-4, zip_2.0.4, mvtnorm_1.0-12, labeling_0.3, rio_0.5.16, forcats_0.4.0, curl_3.3, Rcpp_1.0.3, scales_1.0.0, abind_1.4-5, hms_0.4.2, digest_0.6.18, stringi_1.4.3, openxlsx_4.1.0.1, numDeriv_2016.8-1.1, grid_3.6.3, tools_3.6.3, bbmle_1.0.23.1, lazyeval_0.2.2, tibble_2.1.1, crayon_1.3.4, car_3.0-3, pkgconfig_2.0.2, Matrix_1.2-18, data.table_1.12.2, assertthat_0.2.1, R6_2.4.0, nlme_3.1-147, compiler_3.6.3
+:END:
+
