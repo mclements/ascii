@@ -33,3 +33,4 @@ R/.Rhistory
 ^ascii.*\.tar\.gz$
 Makefile
 .Rhistory
+README.*

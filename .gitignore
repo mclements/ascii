@@ -19,3 +19,6 @@ Makefile
 ..Rcheck/
 ascii.Rcheck/
 .Rhistory
+README.bbl
+README.tex
+auto/
