@@ -58,7 +58,7 @@ David Hajage
 David Hajage \email{dhajage@gmail.com}
 }
 \seealso{
-\code{\link[utils]{Sweave}}, \code{\link[ascii]{Asciidoc}}
+\code{\link[utils]{Sweave}}, \code{\link{Asciidoc}}
 }
 \keyword{file}
 \keyword{internal}

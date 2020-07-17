@@ -12,14 +12,14 @@
 \usage{
 RweaveOrgSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE,
 extension = "org", backend = "org-mode",
-openSchunk = "#+BEGIN_SRC R-transcript", closeSchunk = "\n#+END_SRC\n",
+openSchunk = "#+BEGIN_example", closeSchunk = "\n#+END_example\n",
 openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "",
 indent = "", openInclude = "#+INCLUDE: \"", closeInclude = ".org\"",
 openFig = "[[file:", closeFig = "]]", ...)
 
 weaverOrgSetup(file, syntax, output = NULL, quiet = FALSE, debug = FALSE,
 extension = "org", backend = "org-mode",
-openSchunk = "#+BEGIN_SRC R-transcript", closeSchunk = "\n#+END_SRC\n",
+openSchunk = "#+BEGIN_example", closeSchunk = "\n#+END_example\n",
 openSinput = "", closeSinput = "", openSoutput = "\n", closeSoutput = "",
 indent = "", openInclude = "#+INCLUDE: \"", closeInclude = ".org\"",
 openFig = "[[file:", closeFig = "]]", use.cache = TRUE, ...)
@@ -90,7 +90,7 @@ David Hajage
 David Hajage \email{dhajage@gmail.com}
 }
 \seealso{
-\code{\link[utils]{Sweave}}, \code{\link[ascii]{Org}}
+\code{\link[utils]{Sweave}}, \code{\link{Org}}
 }
 \keyword{file}
 \keyword{internal}

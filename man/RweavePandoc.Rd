@@ -90,7 +90,7 @@ David Hajage
 David Hajage \email{dhajage@gmail.com} Matti Pastell \email{matti.pastell@helsinki.fi}
 }
 \seealso{
-\code{\link[utils]{Sweave}}, \code{\link[ascii]{Pandoc}}
+\code{\link[utils]{Sweave}}, \code{\link{Pandoc}}
 }
 \keyword{file}
 \keyword{internal}

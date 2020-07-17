@@ -90,7 +90,7 @@ David Hajage
 David Hajage \email{dhajage@gmail.com}
 }
 \seealso{
-\code{\link[utils]{Sweave}}, \code{\link[ascii]{Textile}}
+\code{\link[utils]{Sweave}}, \code{\link{Textile}}
 }
 \keyword{file}
 \keyword{internal}
