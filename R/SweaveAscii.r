@@ -12,7 +12,7 @@
 ##' @import utils
 ##' @keywords IO file
 Asciidoc <- function(file, driver=RweaveAsciidoc, syntax=SweaveSyntaxNoweb,
-                     encoding=getOption("SweaveSyntax"), ...)
+                     encoding="", ...)
     Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
@@ -20,7 +20,7 @@ Asciidoc <- function(file, driver=RweaveAsciidoc, syntax=SweaveSyntaxNoweb,
 ##' @import utils
 ##' @keywords IO file
 T2t <- function(file, driver=RweaveT2t, syntax=SweaveSyntaxNoweb,
-                encoding=getOption("SweaveSyntax"), ...)
+                encoding="", ...)
     Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
@@ -28,7 +28,7 @@ T2t <- function(file, driver=RweaveT2t, syntax=SweaveSyntaxNoweb,
 ##' @import utils
 ##' @keywords IO file
 ReST <- function(file, driver=RweaveReST, syntax=SweaveSyntaxNoweb,
-                 encoding=getOption("SweaveSyntax"), ...)
+                 encoding="", ...)
     Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
@@ -36,7 +36,7 @@ ReST <- function(file, driver=RweaveReST, syntax=SweaveSyntaxNoweb,
 ##' @import utils
 ##' @keywords IO file
 Org <- function(file, driver=RweaveOrg, syntax=SweaveSyntaxNoweb,
-                encoding=getOption("SweaveSyntax"), ...)
+                encoding="", ...)
     Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
@@ -44,7 +44,7 @@ Org <- function(file, driver=RweaveOrg, syntax=SweaveSyntaxNoweb,
 ##' @import utils
 ##' @keywords IO file
 Textile <- function(file, driver=RweaveTextile, syntax=SweaveSyntaxNoweb,
-                    encoding=getOption("SweaveSyntax"), ...)
+                    encoding="", ...)
     Sweave(file, driver, syntax, encoding, ...)
 
 ##' @rdname sweave-wrapper
@@ -52,5 +52,5 @@ Textile <- function(file, driver=RweaveTextile, syntax=SweaveSyntaxNoweb,
 ##' @import utils
 ##' @keywords IO file
 Pandoc <- function(file, driver=RweavePandoc, syntax=SweaveSyntaxNoweb,
-                   encoding=getOption("SweaveSyntax"), ...)
+                   encoding="", ...)
     Sweave(file, driver, syntax, encoding, ...)
