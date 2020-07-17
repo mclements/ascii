@@ -1,3 +1,14 @@
+Version 2.3
+-----------
+
+* New CRAN maintainer (with permission from @eusebe)
+
+* Removed cacheSweave code (multiple dependencies archived on CRAN)
+
+* Included weaver code internally (with permission from @seth)
+
+* Tidied up the documentation for CRAN submission
+
 Version 2.2
 -----------
 

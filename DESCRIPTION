@@ -3,8 +3,8 @@ Maintainer: Mark Clements <mark.clements@ki.se>
 License: GPL (>= 2)
 Title: Export R Objects to Several Markup Languages
 Type: Package
-Authors@R: c(person("David", "Hajage", role=c("aut", "cre"), email="dhajage@gmail.com"),
-	person("Mark", "Clements", role="ctb", email="mark.clements@ki.se"),
+Authors@R: c(person("David", "Hajage", role="aut", email="dhajage@gmail.com"),
+	person("Mark", "Clements", role=c("cre","ctb"), email="mark.clements@ki.se"),
 	person("Seth", "Falcon", role="cph", email="seth@userprimary.net"))
 Description: Coerce R object to asciidoc, txt2tags,
     restructuredText, org, textile or pandoc syntax.
@@ -12,7 +12,7 @@ Description: Coerce R object to asciidoc, txt2tags,
 Version: 2.3
 URL: http://github.com/mclements/ascii
 BugReports: http://github.com/mclements/ascii/issues
-Date: 2020-07-10
+Date: 2020-07-17
 Depends:
     R (>= 2.13),
     methods
@@ -73,3 +73,4 @@ Collate:
     'cache_expr.R'
     'weaver.R'
     'unexported.R'
+RoxygenNote: 7.0.2
