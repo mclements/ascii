@@ -18,3 +18,4 @@ Makefile
 *.tar.gz
 ..Rcheck/
 ascii.Rcheck/
+.Rhistory
