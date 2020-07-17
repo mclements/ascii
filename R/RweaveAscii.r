@@ -809,8 +809,8 @@ RweaveOrg <- function()
 ##' @keywords internal
 RweaveOrgSetup <- RweaveAsciiSetup
 formals(RweaveOrgSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, debug=FALSE,
-                                extension="org", backend="org-mode", openSchunk="#+BEGIN_SRC R-transcript",
-                                closeSchunk="\n#+END_SRC\n", openSinput="", closeSinput="",
+                                extension="org", backend="org-mode", openSchunk="#+BEGIN_example",
+                                closeSchunk="\n#+END_example\n", openSinput="", closeSinput="",
                                 openSoutput="\n", closeSoutput="", indent="", openInclude ="#+INCLUDE: \"",
                                 closeInclude=".org\"", openFig="[[file:", closeFig="]]", ...=)
 
