@@ -14,7 +14,18 @@ options(width = 80)
 
 ** Simple output
 
+In Org Mode, we can use =:results output wrap= to get Org output:
+
+#+begin_example
 #+BEGIN_SRC R :session *R* :results output wrap :exports both
+  x <- matrix(1:4, 2, 2)
+  ascii(x, TRUE, TRUE)
+#+end_src
+#+end_example
+
+This gives the following output:
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports results
   x <- matrix(1:4, 2, 2)
   ascii(x, TRUE, TRUE)
 #+end_src
@@ -43,6 +54,8 @@ The same with some options:
 | **group 1** | =1=         | *3* |
 |             | /2/         | 4   |
 :END:
+
+Note that the GitHub parser for =.org= files does not format this correctly.
 
 ** A list example
 
