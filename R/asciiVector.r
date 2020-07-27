@@ -1,3 +1,4 @@
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")
@@ -22,6 +23,7 @@ ascii.integer <- function (x, include.rownames = FALSE, include.colnames = FALSE
     return(obj)
 }
 
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")
@@ -46,6 +48,7 @@ ascii.numeric <- function (x, include.rownames = FALSE, include.colnames = FALSE
     return(obj)
 }
 
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")
@@ -70,6 +73,7 @@ ascii.character <- function (x, include.rownames = FALSE, include.colnames = FAL
     return(obj)
 }
 
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")

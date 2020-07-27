@@ -1,3 +1,4 @@
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")

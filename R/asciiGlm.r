@@ -1,3 +1,4 @@
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")
@@ -23,6 +24,7 @@ ascii.glm <- function (x, include.rownames = TRUE, include.colnames = TRUE, rown
   return(obj)
 }
 
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")

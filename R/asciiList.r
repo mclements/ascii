@@ -1,3 +1,4 @@
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")
@@ -17,6 +18,7 @@ ascii.simple.list <- function(x, caption = NULL, caption.level = NULL, list.type
     return(obj)
 }
 
+##' @rdname ascii
 ##' @export
 ##' @examples
 ##' op <- options(asciiType = "org")

@@ -53,6 +53,20 @@ Pandoc(
 \description{
 Sweave wrappers
 }
+\examples{
+\dontrun{
+testfile <- system.file("examples", "Org-test-1.nw", package = "ascii")
+
+## enforce par(ask = FALSE)
+options(device.ask.default = FALSE)
+
+## create an org file - in the current working directory, getwd():
+Org(testfile)
+Org(testfile, driver=weaverOrg)
+
+## This can be edited in and exported from Org Mode
+}
+}
 \seealso{
 \code{\link{Sweave}}
 }

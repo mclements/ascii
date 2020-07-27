@@ -72,12 +72,12 @@ environment (see \code{?verbatim} and to insert figures (see
 \code{Report$addVerbatim()}, \code{Report$addFig()}.
 
 It needs a working installation of asciidoc, a2x tool chain,
-txt2tags, pandoc and/or markdown2pdf.
+txt2tags and/or pandoc (NB: markdown2pdf uses pandoc with latex).
 }
 
 \examples{
 \dontrun{
-old <- options(asciiType = "asciidoc")
+op <- options(asciiType = "asciidoc")
 createreport(head(esoph))
 
 r <- Report$new(author = "David Hajage", email = "dhajage at gmail dot com")
@@ -89,7 +89,7 @@ tab <- with(esoph, table(alcgp, agegp))
 r$add(ascii(tab), ascii(summary(tab), format = "nice"))
 r$create()
 r$format <- "slidy"
-r$createt()
+r$create()
 
 r$title <- "R report example"
 r$author <- "David Hajage"
@@ -100,7 +100,7 @@ r$format <- "odt"
 r$create()
 
 r$create(backend = "markdown2pdf", format = "pdf")
-options(old)
+options(op)
 }
 }
 \author{
