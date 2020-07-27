@@ -1,4 +1,8 @@
 ##' @export
+##' @examples
+##' op <- options(asciiType = "org")
+##' ascii(c(a=1L,b=2L),FALSE,TRUE,digits=0)
+##' options(op)
 ##' @method ascii integer
 ascii.integer <- function (x, include.rownames = FALSE, include.colnames = FALSE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "", caption = NULL, caption.level = NULL, width = 0, frame = NULL, grid = NULL, valign = NULL, header = FALSE, footer = FALSE, align = NULL, col.width = 1, style = NULL, tgroup = NULL, n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h", bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle", bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c", lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL, ralign = "c", rvalign = "middle", rstyle = "h", ...){
     obj <- asciiTable$new(x = x, include.rownames = include.rownames,
@@ -19,6 +23,10 @@ ascii.integer <- function (x, include.rownames = FALSE, include.colnames = FALSE
 }
 
 ##' @export
+##' @examples
+##' op <- options(asciiType = "org")
+##' ascii(seq(0,1,length=11),digits=1)
+##' options(op)
 ##' @method ascii numeric
 ascii.numeric <- function (x, include.rownames = FALSE, include.colnames = FALSE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "", caption = NULL, caption.level = NULL, width = 0, frame = NULL, grid = NULL, valign = NULL, header = FALSE, footer = FALSE, align = NULL, col.width = 1, style = NULL, tgroup = NULL, n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h", bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle", bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c", lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL, ralign = "c", rvalign = "middle", rstyle = "h", ...){
     obj <- asciiTable$new(x = x, include.rownames = include.rownames,
@@ -39,6 +47,10 @@ ascii.numeric <- function (x, include.rownames = FALSE, include.colnames = FALSE
 }
 
 ##' @export
+##' @examples
+##' op <- options(asciiType = "org")
+##' ascii(c(a="A",b="B"),FALSE,TRUE,header=TRUE)
+##' options(op)
 ##' @method ascii character
 ascii.character <- function (x, include.rownames = FALSE, include.colnames = FALSE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "", caption = NULL, caption.level = NULL, width = 0, frame = NULL, grid = NULL, valign = NULL, header = FALSE, footer = FALSE, align = NULL, col.width = 1, style = NULL, tgroup = NULL, n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h", bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle", bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c", lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL, ralign = "c", rvalign = "middle", rstyle = "h", ...){
     obj <- asciiTable$new(x = x, include.rownames = include.rownames,
@@ -59,6 +71,10 @@ ascii.character <- function (x, include.rownames = FALSE, include.colnames = FAL
 }
 
 ##' @export
+##' @examples
+##' op <- options(asciiType = "org")
+##' ascii(factor(c("A","B")),FALSE)
+##' options(op)
 ##' @method ascii factor
 ascii.factor <- function (x, include.rownames = FALSE, include.colnames = FALSE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "", caption = NULL, caption.level = NULL, width = 0, frame = NULL, grid = NULL, valign = NULL, header = FALSE, footer = FALSE, align = NULL, col.width = 1, style = NULL, tgroup = NULL, n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h", bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle", bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c", lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL, ralign = "c", rvalign = "middle", rstyle = "h", ...){
     obj <- asciiTable$new(x = x, include.rownames = include.rownames,

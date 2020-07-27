@@ -1,4 +1,8 @@
 ##' @export
+##' @examples
+##' op <- options(asciiType = "org")
+##' local({x <- 1:10; y <- rnorm(length(x),1+x); ascii(anova(lm(y~x)))})
+##' options(op)
 ##' @method ascii anova
 ascii.anova <- function (x, include.rownames = TRUE, include.colnames = TRUE, rownames = NULL, colnames = NULL, format = "f", digits = 2, decimal.mark = ".", na.print = "", caption = NULL, caption.level = NULL, width = 0, frame = NULL, grid = NULL, valign = NULL, header = TRUE, footer = FALSE, align = NULL, col.width = 1, style = NULL, tgroup = NULL, n.tgroup = NULL, talign = "c", tvalign = "middle", tstyle = "h", bgroup = NULL, n.bgroup = NULL, balign = "c", bvalign = "middle", bstyle = "h", lgroup = NULL, n.lgroup = NULL, lalign = "c", lvalign = "middle", lstyle = "h", rgroup = NULL, n.rgroup = NULL, ralign = "c", rvalign = "middle", rstyle = "h", ...){
   x <- as.data.frame(x, check.names = FALSE)

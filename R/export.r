@@ -546,7 +546,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' @author David Hajage
 ##' @examples
 ##' \dontrun{
-##' old <- options(asciiType = "asciidoc")
+##' op <- options(asciiType = "asciidoc")
 ##' createreport(head(esoph))
 ##'
 ##' r <- Report$new(author = "David Hajage", email = "dhajage at gmail dot com")
@@ -569,7 +569,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' r$create()
 ##'
 ##' r$create(backend = "markdown2pdf", format = "pdf")
-##' options(old)
+##' options(op)
 ##' }
 createreport <- function(..., list = NULL, file = NULL, format = NULL, open = TRUE, backend = getOption("asciiBackend"), encoding = NULL, options = NULL, cygwin = FALSE, title = NULL, author = NULL, email = NULL, date = NULL) {
 
