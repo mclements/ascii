@@ -57,7 +57,7 @@ asciiOpts <- function(select = "all", .backends = NULL, .outputs = NULL, .extens
       a2x = c("a2x %options", paste(Sys.getenv("COMSPEC"), "/c", "a2x.py %options"), "bash -c \"a2x %options \""),
       t2t = c("txt2tags %options", paste(Sys.getenv("COMSPEC"), "/c", "txt2tags.py %options"), "bash -c \"txt2tags %options \""),
       pandoc = c("pandoc %options", paste(Sys.getenv("COMSPEC"), "/c", "pandoc %options"), "bash -c \"pandoc %options \""),
-      markdown2pdf = c("markdown2pdf %options", paste(Sys.getenv("COMSPEC"), "/c", "markdown2pdf %options"), "bash -c \"markdown2pdf %options \""))
+      markdown2pdf = c("pandoc %options", paste(Sys.getenv("COMSPEC"), "/c", "pandoc %options"), "bash -c \"pandoc %options \""))
   }
 
   if (is.null(.args)) {
@@ -66,7 +66,7 @@ asciiOpts <- function(select = "all", .backends = NULL, .outputs = NULL, .extens
       a2x = "-a encoding=%e -D %d -f %f %O %i",
       t2t = "--encoding=%e -t %f %O -o %d/%o %i",
       pandoc = "-t %f -o %d/%o %O %i",
-      markdown2pdf = "-o %d/%o %O %i")
+      markdown2pdf = "-t latex -o %d/%o %O %i")
   }
 
   if (is.null(.O)) {
@@ -522,7 +522,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' \code{Report$addVerbatim()}, \code{Report$addFig()}.
 ##'
 ##' It needs a working installation of asciidoc, a2x tool chain,
-##' txt2tags, pandoc and/or markdown2pdf.
+##' txt2tags and/or pandoc (NB: markdown2pdf uses pandoc with latex).
 ##'
 ##' @aliases Report
 ##' @title Report creation
