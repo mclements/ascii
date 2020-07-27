@@ -9,6 +9,14 @@ ascii.htest <- function(x, include.rownames = TRUE, include.colnames = TRUE, row
     res <- cbind(x$statistic, x$parameter, x$p.value)
     colnames(res) <- c("X-squared", "df", "p-value")
   }
+  if (x$method == "One Sample t-test"){
+    res <- cbind(x$statistic, x$parameter, x$p.value, x$conf.int[1], x$conf.int[2], x$estimate)
+    colnames(res) <- c("t-statistic", "df", "p-value", "lower .95", "upper .95", "mean")
+  }
+  if (x$method == "Welch Two Sample t-test"){
+    res <- cbind(x$statistic, x$parameter, x$p.value, x$conf.int[1], x$conf.int[2], x$estimate[1], x$estimate[2])
+    colnames(res) <- c("t-statistic", "df", "p-value", "lower .95", "upper .95", "mean of x", "mean of y")
+  }
   ascii(res, include.rownames = include.rownames,
          include.colnames = include.colnames, rownames = rownames, colnames = colnames,
          format = format, digits = digits, decimal.mark = decimal.mark, na.print = na.print,
