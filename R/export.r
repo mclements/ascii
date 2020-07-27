@@ -546,7 +546,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' @author David Hajage
 ##' @examples
 ##' \dontrun{
-##' options(asciiType = "asciidoc")
+##' old <- options(asciiType = "asciidoc")
 ##' createreport(head(esoph))
 ##'
 ##' r <- Report$new(author = "David Hajage", email = "dhajage at gmail dot com")
@@ -558,7 +558,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' r$add(ascii(tab), ascii(summary(tab), format = "nice"))
 ##' r$create()
 ##' r$format <- "slidy"
-##' r$createt()
+##' r$create()
 ##'
 ##' r$title <- "R report example"
 ##' r$author <- "David Hajage"
@@ -569,6 +569,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' r$create()
 ##'
 ##' r$create(backend = "markdown2pdf", format = "pdf")
+##' options(old)
 ##' }
 createreport <- function(..., list = NULL, file = NULL, format = NULL, open = TRUE, backend = getOption("asciiBackend"), encoding = NULL, options = NULL, cygwin = FALSE, title = NULL, author = NULL, email = NULL, date = NULL) {
 
@@ -652,7 +653,9 @@ createreport <- function(..., list = NULL, file = NULL, format = NULL, open = TR
 ##'
 ##' @author David Hajage
 ##' @rdname createreport
-##' @export
+##' @import methods
+##' @export Report
+##' @exportClass Report
 Report <- setRefClass("Report",
                       fields = c("file", "format", "open", "backend", "encoding", "options", "cygwin", "title", "author", "email", "date", "objects"),
 

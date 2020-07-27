@@ -77,7 +77,7 @@ txt2tags, pandoc and/or markdown2pdf.
 
 \examples{
 \dontrun{
-options(asciiType = "asciidoc")
+old <- options(asciiType = "asciidoc")
 createreport(head(esoph))
 
 r <- Report$new(author = "David Hajage", email = "dhajage at gmail dot com")
@@ -100,6 +100,7 @@ r$format <- "odt"
 r$create()
 
 r$create(backend = "markdown2pdf", format = "pdf")
+options(old)
 }
 }
 \author{
