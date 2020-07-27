@@ -1,0 +1,66 @@
+#+title: A Test File
+#+author: Friedrich Leisch (adapted by Mark Clements)
+
+We load the =ascii= package and set the output type as ="org"=.
+
+#+BEGIN_SRC R :session *R* :results none :exports code
+library(ascii)
+options(asciiType="org")
+#+END_SRC
+
+A simple example: the integers from 1 to 10 are
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+ascii(1:10,digits=0)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+:END:
+
+We can also emulate a simple calculator:
+#+BEGIN_SRC R :results output :exports both
+1 + 1
+1 + pi
+sin(pi/2)
+#+END_SRC
+
+Now we look at Gaussian data:
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+library(stats)
+print(ascii(x <- rnorm(20)))
+cat("\n")
+ascii(t1 <- t.test(x))
+#+END_SRC
+
+Note that we can easily integrate some numbers into standard text: The
+third element of vector =x= is src_R[:session *R* :results value]{x[3]}, the
+$p$-value of the test is src_R[:session *R*]{format.pval(t1$p.value)}.
+
+Now we look at a summary of the famous =iris= data set, and we
+want to see the commands in the code chunks:
+
+#+BEGIN_SRC R :session *R* :results output wrap :exports both
+data(iris)
+ascii(summary(iris))
+#+end_src
+
+#+BEGIN_SRC R :session *R* :results graphics :exports both :file "iris.png" 
+library(graphics)
+pairs(iris)
+#+end_src
+
+#+caption: Pairs plot of the iris data.
+#+RESULTS:
+[[file:iris.png]]
+
+#+BEGIN_SRC R :session *R* :results graphics :exports both :file "iris-boxplot.png" 
+boxplot(Sepal.Length~Species, data=iris)
+#+end_src
+
+#+caption: Boxplot of sepal length grouped by species.
+#+RESULTS:
+[[file:iris-boxplot.png]]
+
+
