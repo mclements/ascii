@@ -461,13 +461,13 @@ fig <- function(file = NULL, graph = NULL, format = NULL, ...) {
 
   if (!is.null(graph)) {
     if (format == "jpg") {
-      jpeg(file, ...)
+      grDevices::jpeg(file, ...)
     }
     if (format == "png") {
-      png(file, ...)
+      grDevices::png(file, ...)
     }
     if (format == "pdf") {
-      pdf(file, ...)
+      grDevices::pdf(file, ...)
     }
     if (is.expression(graph)) {
       eval(graph)
@@ -475,7 +475,7 @@ fig <- function(file = NULL, graph = NULL, format = NULL, ...) {
     else {
       print(graph)
     }
-    dev.off()
+    grDevices::dev.off()
   }
 
   results <- file
@@ -541,6 +541,7 @@ print.fig <- function(x, backend = getOption("asciiBackend"), ...) {
 ##' @param date date
 ##' @return Nothing
 ##' @export
+##' @import methods
 ##' @rdname createreport
 ##' @author David Hajage
 ##' @examples

@@ -4,7 +4,7 @@ ascii.survdiff <- function (x, include.rownames = TRUE, include.colnames = TRUE,
     # From print.survdiff
     if (length(x$n) == 1) {
         z <- sign(x$exp - x$obs) * sqrt(x$chisq)
-        temp <- c(x$obs, x$exp, z, signif(1 - pchisq(x$chisq,
+        temp <- c(x$obs, x$exp, z, signif(1 - stats::pchisq(x$chisq,
             1), digits))
         names(temp) <- c("Observed", "Expected", "Z", "p")
         temp <- t(temp)
@@ -18,7 +18,7 @@ ascii.survdiff <- function (x, include.rownames = TRUE, include.colnames = TRUE,
             etmp <- x$exp
         }
         df <- c((sum(1 * (etmp > 0))) - 1, rep(NA, length(x$n) - 1))
-        p <- c(1 - pchisq(x$chisq, df[!is.na(df)]), rep(NA, length(x$n) - 1))
+        p <- c(1 - stats::pchisq(x$chisq, df[!is.na(df)]), rep(NA, length(x$n) - 1))
         temp <- cbind(x$n, otmp, etmp, ((otmp - etmp)^2)/etmp,
             ((otmp - etmp)^2)/diag(x$var), df, p)
         dimnames(temp) <- list(names(x$n), c("N", "Observed",
@@ -57,7 +57,7 @@ ascii.survfit <- function (x, scale = 1, print.rmean = getOption("survfit.print.
     omit <- x$na.action
     na <- NULL
     if (length(omit))
-         na <- ascii(list(naprint(omit)), list.type = "none")
+         na <- ascii(list(stats::naprint(omit)), list.type = "none")
     if (!missing(print.rmean) && is.logical(print.rmean) && missing(rmean)) {
         if (print.rmean)
             rmean <- "common"
@@ -104,7 +104,7 @@ ascii.summary.survfit <- function (x, include.colnames = TRUE, header = TRUE, di
   omit <- x$na.action
   na <- NULL
   if (length(omit))
-    na <- ascii(list(naprint(omit)), list.type = "none")
+    na <- ascii(list(stats::naprint(omit)), list.type = "none")
   if (x$type == "right" || is.null(x$n.entered)) {
     mat <- cbind(x$time, x$n.risk, x$n.event, x$surv)
     cnames <- c("time", "n.risk", "n.event")
@@ -169,7 +169,7 @@ ascii.coxph <- function (x, include.rownames = TRUE, include.colnames = TRUE, ro
     cox <- x
     beta <- cox$coef
     se <- sqrt(diag(cox$var))
-    tmp <- cbind(beta, exp(beta), se, beta/se, 1 - pchisq((beta/se)^2, 1))
+    tmp <- cbind(beta, exp(beta), se, beta/se, 1 - stats::pchisq((beta/se)^2, 1))
     dimnames(tmp) <- list(names(beta), c("coef", "exp(coef)", "se(coef)", "z", "p"))
 
     obj <- asciiTable$new(x = as.data.frame(tmp), include.rownames = include.rownames,

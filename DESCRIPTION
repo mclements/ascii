@@ -21,7 +21,8 @@ Imports:
     digest,
     codetools,
     survival,
-    stats
+    stats,
+    grDevices
 Suggests:
     Hmisc,
     xtable,

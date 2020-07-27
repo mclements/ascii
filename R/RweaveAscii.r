@@ -680,7 +680,7 @@ RtangleAsciiWritedoc <- function(object, chunk)
 ##'
 ##' A wrapper for \code{Sweave} can be used, named \code{Asciidoc}.
 ##' @author David Hajage \email{dhajage@@gmail.com}
-##' @seealso \code{\link[utils]{Sweave}}, \code{\link[ascii]{Asciidoc}}
+##' @seealso \code{\link[utils]{Sweave}}, \code{\link{Asciidoc}}
 ##' @keywords IO file
 ##' @export
 ##' @rdname RweaveAsciidoc
@@ -720,7 +720,7 @@ RweaveAsciidoc <- function()
 ##'
 ##' A wrapper for \code{Sweave} can be used, named \code{T2t}.
 ##' @author David Hajage \email{dhajage@@gmail.com}
-##' @seealso \code{\link[utils]{Sweave}}, \code{\link[ascii]{T2t}}
+##' @seealso \code{\link[utils]{Sweave}}, \code{\link{T2t}}
 ##' @keywords IO file
 ##' @export
 ##' @rdname RweaveT2t
@@ -778,7 +778,7 @@ formals(RweaveT2tSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, debug=
 ##'
 ##' A wrapper for \code{Sweave} can be used, named \code{Org}.
 ##' @author David Hajage \email{dhajage@@gmail.com}
-##' @seealso \code{\link[utils]{Sweave}}, \code{\link[ascii]{Org}}
+##' @seealso \code{\link[utils]{Sweave}}, \code{\link{Org}}
 ##' @keywords IO file
 ##' @export
 ##' @rdname RweaveOrg
@@ -836,7 +836,7 @@ formals(RweaveOrgSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, debug=
 ##'
 ##' A wrapper for \code{Sweave} can be used, named \code{Pandoc}.
 ##' @author David Hajage \email{dhajage@@gmail.com} Matti Pastell \email{matti.pastell@@helsinki.fi}
-##' @seealso \code{\link[utils]{Sweave}}, \code{\link[ascii]{Pandoc}}
+##' @seealso \code{\link[utils]{Sweave}}, \code{\link{Pandoc}}
 ##' @keywords IO file
 ##' @export
 ##' @rdname RweavePandoc
@@ -894,7 +894,7 @@ formals(RweavePandocSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, deb
 ##'
 ##' A wrapper for \code{Sweave} can be used, named \code{Textile}.
 ##' @author David Hajage \email{dhajage@@gmail.com}
-##' @seealso \code{\link[utils]{Sweave}}, \code{\link[ascii]{Textile}}
+##' @seealso \code{\link[utils]{Sweave}}, \code{\link{Textile}}
 ##' @keywords IO file
 ##' @export
 ##' @rdname RweaveTextile
@@ -952,7 +952,7 @@ formals(RweaveTextileSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, de
 ##'
 ##' A wrapper for \code{Sweave} can be used, named \code{ReST}.
 ##' @author David Hajage \email{dhajage@@gmail.com}
-##' @seealso \code{\link[utils]{Sweave}}, \code{\link[ascii]{ReST}}
+##' @seealso \code{\link[utils]{Sweave}}, \code{\link{ReST}}
 ##' @keywords IO file
 ##' @export
 ##' @rdname RweaveReST
