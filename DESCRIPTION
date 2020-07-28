@@ -5,14 +5,17 @@ Title: Export R Objects to Several Markup Languages
 Type: Package
 Authors@R: c(person("David", "Hajage", role="aut", email="dhajage@gmail.com"),
 	person("Mark", "Clements", role=c("cre","ctb"), email="mark.clements@ki.se"),
-	person("Seth", "Falcon", role="cph", email="seth@userprimary.net"))
+	person("Seth", "Falcon", role="ctb", email="seth@userprimary.net"),
+	person("Terry", "Therneau", role="ctb", email="therneau.terry@mayo.edu"),
+	person("Matti","Pastell", role="ctb"),
+	person("Friedrich", "Leisch", role="ctb"))
 Description: Coerce R object to 'asciidoc', 'txt2tags',
     'restructuredText', 'org', 'textile' or 'pandoc' syntax.
     Package comes with a set of drivers for 'Sweave'.
 Version: 2.3
 URL: http://github.com/mclements/ascii
 BugReports: http://github.com/mclements/ascii/issues
-Date: 2020-07-17
+Date: 2020-07-27
 Depends:
     R (>= 2.13),
     methods
