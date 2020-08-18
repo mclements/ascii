@@ -97,3 +97,15 @@ ascii.factor <- function (x, include.rownames = FALSE, include.colnames = FALSE,
          rvalign = rvalign, rstyle = rstyle)
     return(obj)
 }
+
+
+
+##' @rdname ascii
+##' @export
+##' @examples
+##' op <- options(asciiType = "org")
+##' ascii(system.time(sum(1:1e6)), header=TRUE)
+##' options(op)
+##' @method ascii proc_time
+  ascii.proc_time = function(x, include.rownames=FALSE, include.colnames=TRUE, ...)
+      ascii(summary(x), include.rownames, include.colnames, ...)

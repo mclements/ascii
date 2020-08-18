@@ -26,6 +26,7 @@
 \alias{ascii.numeric}
 \alias{ascii.character}
 \alias{ascii.factor}
+\alias{ascii.proc_time}
 \alias{ascii}
 \alias{package-ascii}
 \alias{ascii.aov}
@@ -754,6 +755,8 @@
   ...
 )
 
+\method{ascii}{proc_time}(x, include.rownames = FALSE, include.colnames = TRUE, ...)
+
 ascii(x, ...)
 }
 \arguments{
@@ -1071,6 +1074,9 @@ ascii(c(a="A",b="B"),FALSE,TRUE,header=TRUE)
 options(op)
 op <- options(asciiType = "org")
 ascii(factor(c("A","B")),FALSE)
+options(op)
+op <- options(asciiType = "org")
+ascii(system.time(sum(1:1e6)), header=TRUE)
 options(op)
 data(esoph)
 ascii(esoph[1:10,])
