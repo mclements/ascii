@@ -34,3 +34,5 @@ R/.Rhistory
 Makefile
 .Rhistory
 README.*
+ascii/auto
+ascii/inst/examples/auto
