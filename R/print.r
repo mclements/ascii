@@ -78,8 +78,9 @@ setMethod(show, "asciiTable",
 
 ##' @rdname print-ascii
 ##' @export
-setMethod(print, "asciiList",
-           function(x, type = getOption("asciiType"), file = NULL, append = FALSE, escape = FALSE, list.escape = c("\\_", "\\^"), ...) {
+setMethod("print", "asciiList",
+          function(x, type = getOption("asciiType"), file = NULL, append = FALSE, escape = FALSE,
+                   list.escape = c("\\_", "\\^"), ...) {
              if (type == "asciidoc") res <- capture.output(x$show.asciidoc())
              if (type == "rest") res <- capture.output(x$show.rest())
              if (type == "org") res <- capture.output(x$show.org())
@@ -115,7 +116,7 @@ setMethod(show, "asciiList",
 
 ##' @rdname print-ascii
 ##' @export
-setMethod(print, "asciiMixed",
+setMethod("print", "asciiMixed",
            function(x, type = getOption("asciiType"), file = NULL, append = FALSE, escape = FALSE, list.escape = c("\\_", "\\^"), ...) {
              if (type == "asciidoc") res <- capture.output(x$show.asciidoc())
              if (type == "rest") res <- capture.output(x$show.rest())
@@ -152,7 +153,7 @@ setMethod(show, "asciiMixed",
 
 ##' @rdname print-ascii
 ##' @export
-setMethod(print, "Report",
+setMethod("print", "Report",
           function(x, help = FALSE, ...) {
             if (help)
               x$show.Report(help = TRUE)

@@ -4,7 +4,7 @@
 \alias{print.character.matrix}
 \title{print.character.matrix}
 \usage{
-print.character.matrix(
+\method{print}{character.matrix}(
   x,
   vsep = "|",
   before_vsep = "",
