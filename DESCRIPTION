@@ -12,10 +12,10 @@ Authors@R: c(person("David", "Hajage", role="aut", email="dhajage@gmail.com"),
 Description: Coerce R object to 'asciidoc', 'txt2tags',
     'restructuredText', 'org', 'textile' or 'pandoc' syntax.
     Package comes with a set of drivers for 'Sweave'.
-Version: 2.3
+Version: 2.4
 URL: http://github.com/mclements/ascii
 BugReports: http://github.com/mclements/ascii/issues
-Date: 2020-07-27
+Date: 2020-08-18
 Depends:
     R (>= 2.13),
     methods
