@@ -2,6 +2,7 @@
 
 .SweaveValidFilenameRegexp <- "^[[:alnum:]/#+_-]+$"
 
+#' @importFrom survival coxph
 survmean <- function (x, scale = 1, rmean) 
 {
     if (!is.null(x$start.time)) 
