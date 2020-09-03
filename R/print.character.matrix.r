@@ -60,6 +60,7 @@ align.table <- function(x, align, space = 1) {
 ##' @param right_alignment right_alignment
 ##' @param print print
 ##' @keywords internal
+##' @method print character.matrix
 print.character.matrix <- function(x, vsep = "|", before_vsep = "", after_vsep = "", hsep = "-", csep = "+", before_cell_content = " ", after_cell_content = " ", line_separator = TRUE, line_separator_pos = NULL, justify = "l", space = 0, right_alignment = FALSE, print = TRUE) {
 
   # after et before cell_content
