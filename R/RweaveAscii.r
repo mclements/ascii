@@ -784,7 +784,8 @@ formals(RweaveT2tSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, debug=
 ##' @rdname RweaveOrg
 ##' @examples
 ##'   \dontrun{
-##' Org("file.Rnw")
+##' Org(system.file("examples/Org-test-1.nw",package="ascii"))
+##' Org(system.file("examples/Org-test-1.nw",package="ascii"),weaverOrg())
 ##'   }
 ##'
 RweaveOrg <- function()
