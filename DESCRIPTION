@@ -13,8 +13,8 @@ Description: Coerce R object to 'asciidoc', 'txt2tags',
     'restructuredText', 'org', 'textile' or 'pandoc' syntax.
     Package comes with a set of drivers for 'Sweave'.
 Version: 2.4
-URL: http://github.com/mclements/ascii
-BugReports: http://github.com/mclements/ascii/issues
+URL: https://github.com/mclements/ascii
+BugReports: https://github.com/mclements/ascii/issues
 Date: 2020-08-18
 Depends:
     R (>= 2.13),
