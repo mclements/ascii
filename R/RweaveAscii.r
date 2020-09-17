@@ -686,7 +686,9 @@ RtangleAsciiWritedoc <- function(object, chunk)
 ##' @rdname RweaveAsciidoc
 ##' @examples
 ##'   \dontrun{
-##' Asciidoc("file.Rnw")
+##' Asciidoc(system.file("examples/Asciidoc-test-1.nw",package="ascii"))
+##' Asciidoc(system.file("examples/Asciidoc-test-1.nw",package="ascii"),weaverAsciidoc())
+##' system("asciidoc Asciidoc-test-1.txt")
 ##'   }
 ##'
 RweaveAsciidoc <- function()
