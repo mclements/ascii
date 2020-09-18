@@ -120,14 +120,14 @@ show.pandoc.table <- function(x, include.rownames = FALSE, include.colnames = FA
     style <- ""
     style <- expand(style, nrowx, ncolx)
   }
-  if ((is.logical(header) & header) | header >= 1) {
+  if ((is.logical(header) && header) || header >= 1) {
     style[1:min(nrow(style), header), ] <- "**"
     header <- 1
   }
   if (footer >= 1) {
     style[nrow(style):max((nrow(style)-footer+1), 1), ] <- "**"
   }
-  if (include.rownames & include.colnames) {
+  if (include.rownames && include.colnames) {
     style[1, 1] <- ""
   }
 
@@ -199,12 +199,12 @@ show.pandoc.table <- function(x, include.rownames = FALSE, include.colnames = FA
   if (is.null(align)) {
     align <- "l"
   }
-  if (is.null(lalign) & length(lgroup) > 0) {
+  if (is.null(lalign) && length(lgroup) > 0) {
     lalign <- "c"
   } else if (length(lgroup) == 0) {
     lalign <- NULL
   }
-  if (is.null(ralign) & length(rgroup) > 0) {
+  if (is.null(ralign) && length(rgroup) > 0) {
     ralign <- "c"
   } else if (length(rgroup) == 0) {
     ralign <- NULL
