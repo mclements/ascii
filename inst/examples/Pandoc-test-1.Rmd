@@ -1,0 +1,59 @@
+---
+title: "A Test File"
+author: "Friedrich Leisch (adapted by Mark Clements)"
+output:
+  html_document:
+    toc: TRUE
+---
+
+We load the `ascii` package and set the output type as `"pandoc"`.
+```{r setup, include=FALSE}
+library(ascii)
+options(asciiType="pandoc")
+```
+
+A simple example: the integers from 1 to 10 are
+```{r integers,results='asis'}
+ascii(1:10)
+```
+```{r testing, include=FALSE}
+print(1:20)
+``` 
+<!-- the above is just to ensure that 2 code chunks can follow each other -->
+
+We can also emulate a simple calculator:
+
+```{r}
+1 + 1
+1 + pi
+sin(pi/2)
+```
+
+Now we look at Gaussian data:
+
+```{r}
+library(stats)
+print(x <- rnorm(20))
+print(t1 <- t.test(x))
+```
+Note that we can easily integrate some numbers into standard text: The
+third element of vector `x` is `r x[3]`, the
+_p_-value of the test is `r format.pval(t1$p.value)`.
+
+Now we look at a summary of the famous `iris` data set, and we
+want to see the commands in the code chunks:
+
+```{r, results='asis'}
+data(iris)
+ascii(summary(iris),header=TRUE)
+```
+
+```{r,fig.cap="Pairs plot of the iris data"}
+library(graphics)
+pairs(iris)
+```
+
+
+```{r,fig.cap="Boxplot of sepal length grouped by species"}
+boxplot(Sepal.Length~Species, data=iris)
+```
