@@ -989,4 +989,4 @@ formals(RweaveReSTSetup) <-alist(file=, syntax=, output=NULL, quiet=FALSE, debug
                                  extension="rst", backend="docutils, sphinx, ...", openSchunk=".. code-block:: r\n",
                                  closeSchunk="\n\n", openSinput="", closeSinput="",
                                  openSoutput="\n", closeSoutput="", indent="  ", openInclude =".. include::",
-                                 closeInclude=".rst", openFig=".. image:: ", closeFig="", ...=)
+                                 closeInclude=".rst", openFig=".. figure:: ", closeFig="", ...=)
