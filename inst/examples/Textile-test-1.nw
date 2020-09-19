@@ -4,7 +4,7 @@ h1. A Test File
 
 h2. Friedrich Leisch (adapted by Mark Clements)
 
-We load the ??ascii?? package and set the output type as @"asciidoc"@.
+We load the ??ascii?? package and set the output type as @"textile"@.
 
 <<echo=TRUE,print=FALSE>>=
 library(ascii)
