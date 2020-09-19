@@ -50,12 +50,9 @@ ascii(summary(iris))
 library(graphics)
 pairs(iris)
 @
-#+caption: Pairs plot of the iris data.
-
-# Captions are exported but need to immediately precede the figures
+Pairs plot of the iris data.
 
 <<fig=true>>=
 boxplot(Sepal.Length~Species, data=iris)
 @
-#+caption: Boxplot of sepal length grouped by species.
-
+Boxplot of sepal length grouped by species.
