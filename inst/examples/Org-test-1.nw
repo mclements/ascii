@@ -3,6 +3,8 @@
 #+title: A Test File
 #+author: Friedrich Leisch (adapted by Mark Clements)
 
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/readthedocs.setup
+
 We load the =ascii= package and set the output type as ="org"=.
 
 <<echo=TRUE,print=FALSE>>=
