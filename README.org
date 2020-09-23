@@ -233,3 +233,31 @@ Note that the GitHub parser for =.org= files does not format this correctly.
 :END:
 
 
+*** Using the Report class
+
+The code snippet below shows the use of the Report class: 
+
+#+BEGIN_SRC R :session *R* :export code :results none
+options(asciiType = "asciidoc")
+createreport(head(esoph))
+
+r <- Report$new(author = "David Hajage", email = "dhajage at gmail dot com")
+r$add(section("First section"))
+r$addSection("First subsection", 2)
+r$add(paragraph("The data set has", sexpr(nrow(esoph)), " lines. See yourself:"), esoph)
+r$addSection("Second subsection: age and alc group", 2)
+tab <- with(esoph, table(alcgp, agegp))
+r$add(ascii(tab), ascii(summary(tab), format = "nice"))
+r$create()
+r$format <- "slidy"
+r$create()
+
+r$title <- "R report example"
+r$author <- "David Hajage"
+r$email <- "dhajage at gmail dot com"
+options(asciiType = "pandoc")
+r$backend <- "pandoc"
+r$format <- "odt"
+r$create()
+
+#+END_SRC
