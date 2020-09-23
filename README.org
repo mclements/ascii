@@ -148,18 +148,28 @@ T2t(system.file("examples/T2t-test-1.nw",package="ascii"), driver=weaverT2t())
 system("txt2tags -t html T2t-test-1.t2t")
 #+end_src
 
+** Org markup using Noweb
 
-** Org mode
+A source Noweb file is [[https://github.com/mclements/ascii/blob/master/inst/examples/Org-test-1.nw][here]]. It can be processed to export to HTML using:
 
-Initially, we set some options, including the default for =asciiType=. 
+#+BEGIN_SRC R :session *R* :exports code :results none
+Org(system.file("examples/Org-test-1.nw",package="ascii"))
+#+end_src
 
-#+BEGIN_SRC R :session *R* :exports code
-options(asciiType = "org")
-options(width = 80)
+Alternatively, to allow caching using weaver, we can use:
+
+#+BEGIN_SRC R :session *R* :exports code :results none
+Org(system.file("examples/Org-test-1.nw",package="ascii"), driver=weaverOrg())
+#+end_src
+
+
+** Org mode using R code blocks
+
+A more typical use of =ascii= with Org mode would be to use Babel with R code blocks. Initially, we set some options, including the default for =asciiType=. 
+
+#+BEGIN_SRC R :session *R* :exports code :results none
+options(asciiType = "org", width = 80)
 #+END_SRC
-
-#+RESULTS:
-: 90
 
 *** Simple output
 
