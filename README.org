@@ -9,10 +9,10 @@
 =ascii= provides:
 
 - a generic method: =ascii()=. It creates a plain text representations of many R objects.
-- several classic =Sweave= drivers: =RweaveAsciidoc()=, =RweaveT2t()=, =RweaveReST()=, =RweaveOrg()= and =RweaveTextile()=.
-- [[https://www.bioconductor.org/packages/release/bioc/html/weaver.html][weaver]] based =Sweave= drivers: =weaverAsciidoc()=, =weaverT2t()=, =weaverReST()=, =weaverOrg()= and =weaverTextile()=.
-- some simple wrappers for =Sweave()= named =Asciidoc()=, =T2t()=, =ReST()=, =Org()= and =Textile()=.
-- a Report class for R scripting.
+- several classic =Sweave= drivers: =RweaveAsciidoc()=, =RweaveT2t()=, =RweaveReST()=, =RweaveOrg()=, =RweavePandoc()= and =RweaveTextile()=.
+- [[https://www.bioconductor.org/packages/release/bioc/html/weaver.html][weaver]] based =Sweave= drivers: =weaverAsciidoc()=, =weaverT2t()=, =weaverReST()=, =weaverOrg()=, =weaverPandoc()= and =weaverTextile()=.
+- some simple wrappers for =Sweave()= named =Asciidoc()=, =T2t()=, =ReST()=, =Org()=, =Pandoc()= and =Textile()=.
+- a =Report= class for R scripting.
 
 ** ascii methods
 
@@ -235,7 +235,7 @@ Note that the GitHub parser for =.org= files does not format this correctly.
 
 *** Using the Report class
 
-The code snippet below shows the use of the Report class: 
+The code snippet below shows the use of the =Report= class:
 
 #+BEGIN_SRC R :session *R* :export code :results none
 options(asciiType = "asciidoc")
